@@ -1,5 +1,5 @@
 {
-  "name": "orbit",
+  "name": "@tokio-js/orbit",
   "version": "1.0.0",
   "description": "Super fast event system",
   "author": "AtomicGamer9523",
@@ -7,6 +7,9 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/tokio-js/orbit.git"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
   },
   "bugs": {
     "url": "https://github.com/tokio-js/orbit/issues"
