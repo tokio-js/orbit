@@ -1,0 +1,8 @@
+/**
+ * @author AtomicGamer <github.com/AtomicGamer9523>
+ * @license MIT
+ * @version 1.0.0
+ * @module Orbit
+*/
+
+'use strict';Object.defineProperty(exports,"__esModule",{value:true});exports.Event=exports.Bus=void 0;class UnlinkedEventError extends Error{constructor(name,bus){super(`Event '${name}' is not linked to bus '${bus}'`);}}class Bus{#name;#registered_events;#subscribers=new Map();#__orbit_validate__=(e)=>{if(typeof e==="string"){if(!this.#registered_events.includes(e))throw new UnlinkedEventError(e,this.#name);return(e);}return(this.#__orbit_validate__(Event.__raw_orbit_event__(e).name));};constructor(name){this.#name=name||"ORBIT_BUS_"+Date.now();this.#registered_events=[];};on(eventname,func){let _e=this.#__orbit_validate__(eventname);if(this.#subscribers.get(_e)===undefined)this.#subscribers.set(_e,[]);this.#subscribers.get(_e).push(func);};post(event){let _e=this.#__orbit_validate__(event);if(this.#subscribers.get(_e)!==undefined){this.#subscribers.get(_e).forEach(f=>f(event));}};__orbit_link_event__(event){this.#registered_events.push(event)}}class Event{#__orbit_event__;constructor(name){this.#__orbit_event__={creation_timestamp:Date.now(),name:name}}static link(bus){bus["__orbit_link_event__"](this.__create_void__().#__orbit_event__.name)}static __raw_orbit_event__(e){return(e.#__orbit_event__)}static __create_void__(){return(new this());}};exports.Bus=Bus;exports.Event=Event;

@@ -1,19 +1,10 @@
-# Orbit
-
-## Super fast event system for JS and TS
-
-### Examples
-
-### Exmaple (TS)
-
-```ts
-import * as orbit from "orbitjs";
+const orbit = require("../one-liner/orbit");
 
 const BUS = new orbit.Bus("Main");
 
 class PlayerJoinEvent extends orbit.Event {
-    public name: string;
-    constructor(name: string) {
+    name;
+    constructor(name) {
         super("PlayerJoinEvent");
         this.name = name;
     }
@@ -21,7 +12,7 @@ class PlayerJoinEvent extends orbit.Event {
 
 PlayerJoinEvent.link(BUS)
 
-BUS.on<PlayerJoinEvent>("PlayerJoinEvent", async event => {
+BUS.on("PlayerJoinEvent", async event => {
     console.log("Player Joined: " + event.name);
 });
 
@@ -33,4 +24,3 @@ BUS.on("PlayerJoinEvent", async () => {
 BUS.post(
     new PlayerJoinEvent("Bob")
 );
-```

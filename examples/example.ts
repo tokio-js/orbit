@@ -1,13 +1,4 @@
-# Orbit
-
-## Super fast event system for JS and TS
-
-### Examples
-
-### Exmaple (TS)
-
-```ts
-import * as orbit from "orbitjs";
+import * as orbit from "../one-liner/orbit";
 
 const BUS = new orbit.Bus("Main");
 
@@ -33,4 +24,3 @@ BUS.on("PlayerJoinEvent", async () => {
 BUS.post(
     new PlayerJoinEvent("Bob")
 );
-```

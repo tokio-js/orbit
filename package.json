@@ -1,0 +1,21 @@
+{
+  "name": "orbit",
+  "version": "1.0.0",
+  "description": "Super fast event system",
+  "author": "AtomicGamer9523",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tokio-js/orbit.git"
+  },
+  "bugs": {
+    "url": "https://github.com/tokio-js/orbit/issues"
+  },
+  "homepage": "https://github.com/tokio-js/orbit#readme",
+  "main": "./one-liner/lib.js",
+  "types": "./one-liner/lib.d.ts",
+  "type": "commonjs",
+  "dependencies": {
+    "@types/node": "^18.11.18"
+  }
+}
