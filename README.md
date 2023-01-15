@@ -2,7 +2,7 @@
 
 ## Super fast event system for JS and TS
 
-### Examples
+### [Examples](./examples/)
 
 ### Exmaple (TS)
 
