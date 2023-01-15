@@ -1,15 +1,8 @@
-﻿/**
- * @author AtomicGamer <github.com/AtomicGamer9523>
- * @license MIT
- * @version 1.0.0
- * @module Orbit
-*/
-
-interface EventInternal {
+﻿interface EventInternal {
     name: string;
     creation_timestamp: number;
 }
-declare type Consumer<T> = (i: T) => void;
+type Consumer<T> = (i: T) => void;
 /**
  * # Orbit Event Bus
  * ### Used to subscibe and post events to
@@ -97,4 +90,3 @@ export declare class Event {
     private static __create_void__;
 }
 export {};
-//# sourceMappingURL=lib.d.ts.map
