@@ -1,4 +1,4 @@
-import * as orbit from "../one-liner/orbit";
+import * as orbit from "../src/lib";
 
 const BUS = new orbit.Bus("Main");
 

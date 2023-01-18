@@ -1,4 +1,4 @@
-const orbit = require("../one-liner/orbit");
+const orbit = require("../src/lib");
 
 const BUS = new orbit.Bus("Main");
 
